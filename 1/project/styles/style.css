@@ -1,0 +1,84 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  margin: 20px auto;
+}
+header > button {
+  cursor: pointer;
+  border: 1px solid #333;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 32px;
+  text-transform: uppercase;
+}
+header :hover {
+  color: #833;
+  border-color: #833;
+}
+header :active {
+  box-shadow: 0px 2px 5px 2px rgba(34, 60, 80, 0.2) inset;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: fit-content;
+  margin: 10px 20px;
+  padding: 12px;
+  border: 1px solid #833;
+  border-radius: 12px;
+}
+.product-item > img {
+  width: 90px;
+  margin-bottom: 10px;
+}
+.product-item > h3 {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #833;
+}
+.product-item > button.buy-btn {
+  border: 1px solid #333;
+  padding: 5px;
+  border-radius: 6px;
+  margin-top: 8px;
+}
+.product-item > button.buy-btn:hover {
+  cursor: pointer;
+  color: #833;
+  border-color: #833;
+}
+.product-item > button.buy-btn:active {
+  box-shadow: 0px 2px 5px 2px rgba(34, 60, 80, 0.2) inset;
+}
+
+.product-item:hover {
+  opacity: 0.9;
+}/*# sourceMappingURL=style.css.map */
