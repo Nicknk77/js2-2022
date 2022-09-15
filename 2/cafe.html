@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>McDonald's</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://kit.fontawesome.com/6986d1abd3.js" crossorigin="anonymous"></script>
+    <script defer src="js/mcdonalds.js"></script>
+</head>
+<body>
+	<h1>McDonald's</h1>
+	<div class="wrapper">
+	    <form>
+			<fieldset class="chooseBurger">
+				<legend>Выберите бургер:</legend>
+				<div>
+					<input type="radio" name="burgerSize" id="smallSize" value="0"
+					       checked>
+					<label for="smallSize">Маленький</label>
+				</div>
+				<div>
+					<input type="radio" name="burgerSize" id="bigSize" value="1">
+					<label for="bigSize">Большой</label>
+				</div>
+				<h4>Выберите начинку:</h4>
+				<div>
+					<input type="radio" name="staffing" id="cheese" value="0"
+					       checked>
+					<label for="cheese">С сыром</label>
+				</div>
+				<div>
+					<input type="radio" name="staffing" id="salad" value="1">
+					<label for="salad">С салатом</label>
+				</div>
+				<div>
+					<input type="radio" name="staffing" id="potato" value="2">
+					<label for="potato">С картошкой</label>
+				</div>
+				<h4>Выберите добавку:</h4>
+				<div>
+					<input type="checkbox" name="topping1" id="topPepper">
+					<label for="topPepper">Приправа</label>
+				</div>
+				<div>
+					<input type="checkbox" name="topping2" id="topMayonnaise">
+					<label for="topMayonnaise">Майонез</label>
+				</div>
+				<div class="blockInfoBurger">
+					<div class="blockInfoBurger_info">Калораж:
+						<input class="infoBurger" type="text" name="getCalories" id="getCalories" disabled value="0">
+					</div>
+					<div class="blockInfoBurger_info">Цена:
+						<input class="infoBurger" type="text" name="getPrice" id="getPrice" disabled value="0">
+					</div>
+				</div>
+				<button class="butAddToMenu">Добавить в меню</button>
+			</fieldset>
+		</form>
+
+		<div class="menu">
+			<fieldset>
+				<legend>Вы накидали в меню:</legend>
+				<div class="ourMenu"></div>
+			</fieldset>
+
+		</div>
+	</div>
+
+
+</body>
+</html>
