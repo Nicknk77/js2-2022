@@ -17,7 +17,7 @@ const staffing = [
         price: 15,
         calories: 10
     }
-    ];
+];
 
 // массив размеров
 const size = [
@@ -47,7 +47,8 @@ const topping = [
     }
 ]
 
-// массив для первоначального заполнения меню ресторана (для тестирования - сейчас  нужен)
+// массив для первоначального заполнения меню ресторана  
+// (для тестирования - сейчас не нужен)
 const burgers = [
     {
         size: size[0],
@@ -74,7 +75,6 @@ const burgers = [
 // собираем по форме наш бургер и возвращаем объект с его свойствами
 function getParams() {
     let top = [];
-    let top2 = '';
     let block = document.querySelector('.chooseBurger');
     let siz = size[block.querySelector('input[name="burgerSize"]:checked').value];
     let staff = staffing[+block.querySelector('input[name="staffing"]:checked').value];
@@ -82,8 +82,7 @@ function getParams() {
     let topping2 = block.querySelector('#topMayonnaise').checked ? topping[1] : null;
     if (topping1) top.push(topping1);
     if (topping2) top.push(topping2);
-    for (let i=0; i < top.length; i++) top2 += `${top[i].title}<br>`;
-    return {siz, staff, top};
+    return { siz, staff, top };
 }
 
 class Mcdonalds {
@@ -128,7 +127,7 @@ class Mcdonalds {
                 let staffing = item.staff;
                 let burger = new Burger(size, staffing);
                 let top2 = '';
-                for (let i=0; i < item.top.length; i++) top2 += `${item.top[i].title}<br>`;
+                for (let i = 0; i < item.top.length; i++) top2 += `${item.top[i].title}<br>`;
                 burger.topping = top2;
                 burger.price = Burger.calculatePrice();
                 burger.calories = Burger.calculateCalories();
@@ -153,7 +152,7 @@ class Mcdonalds {
 }
 
 class Burger {
-    constructor(size = {}, stuffing= {}) {
+    constructor(size = {}, stuffing = {}) {
         this.size = size;
         this.staffing = stuffing;
     }
