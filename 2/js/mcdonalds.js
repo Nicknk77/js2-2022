@@ -88,6 +88,7 @@ function getParams() {
 class Mcdonalds {
     constructor() {
         this.menu = [];
+        this.totalPrice = 0
 
     }
 
@@ -97,13 +98,6 @@ class Mcdonalds {
         Burger.calculateCalories();
     }
 
-    _delFromMenu(id) {
-        this.menu.forEach((el, index, arr) => {
-            if (index == id) {
-                arr.splice(index, 1);
-            }
-        })
-    }
     _renderMenu() {
         let str = '';
         this.menu.forEach((el, index) => {
@@ -115,6 +109,8 @@ class Mcdonalds {
             str += burger._renderBurger();
         });
         document.querySelector('.ourMenu').innerHTML = str;
+        this._getTotal();
+        document.querySelector('.totalPrice').innerHTML = this.totalPrice;
 
     }
 
@@ -146,6 +142,21 @@ class Mcdonalds {
                 this._delFromMenu(ind);
                 this._renderMenu();
             }
+        })
+    }
+
+    _delFromMenu(id) {
+        this.menu.forEach((el, index, arr) => {
+            if (index == id) {
+                arr.splice(index, 1);
+            }
+        })
+    }
+
+    _getTotal() {
+        this.totalPrice = 0;
+        this.menu.forEach(el => {
+            this.totalPrice += el.price;
         })
     }
 
