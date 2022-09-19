@@ -1,13 +1,13 @@
 "use strict"
 
 const products = [
-    {id: 1, title: 'Notebook', price: 2000},
-    {id: 2, title: 'Mouse', price: 20},
-    {id: 3, title: 'Keyboard', price: 200},
-    {id: 4, title: 'Gamepad', price: 50}
+    { id: 1, title: 'Notebook', price: 2000 },
+    { id: 2, title: 'Mouse', price: 20 },
+    { id: 3, title: 'Keyboard', price: 200 },
+    { id: 4, title: 'Gamepad', price: 50 }
 ];
 //Функция для формирования верстки каждого товара
-const renderProduct = (product,img='https://via.placeholder.com/200x150') => {
+const renderProduct = (product, img = 'https://via.placeholder.com/200x150') => {
     return `<div class="product-item">
                 <img src="${img}" alt="img">
                 <h3>${product.title}</h3>
@@ -20,11 +20,8 @@ const renderPage = list => {
         (list.map(product => renderProduct(product))).join('');
 };
 function showSum(obj) {
-    let sum = 0;
-    obj.forEach(el => {
-        sum += el.price;
-    })
-    return sum;
+    const ini = 0;
+    return obj.reduce((accum, b) => accum + b.price, ini);
 }
 
 //----------------------------------------------------- Корзина -------------------------------------------------
@@ -83,7 +80,7 @@ class Basket {
      * поиск происходит по названию товара ( id здесь вряд ли нужен )
      * */
     _addQty(basket, name) {
-        basket.forEach( el => {
+        basket.forEach(el => {
             if (el.title === name) {
                 el.qty++;
             }
@@ -94,7 +91,7 @@ class Basket {
      * уменьшает количество данного товара в корзине, title - название товара, basket - корзина
      * */
     _minusQty(basket, name) {
-        basket.forEach( (el, index, arr) => {
+        basket.forEach((el, index, arr) => {
             if (el.title === name) {
                 if (el.qty > 1) el.qty--;
                 else arr.splice(index, 1)
