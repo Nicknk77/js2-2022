@@ -76,6 +76,7 @@ class ProductItem {
 }
 
 let list = new ProductsList();
+console.log(list.goods);
 
 // ------------------------------- My code -----------------------------------
 
@@ -88,9 +89,12 @@ class BasketList {
         this._getBasket()
             .then(data => {
                 this.basket = data;
-                this._render()
+                this._render();
+                console.log(this.basket);       // здесь есть объект в свойстве
             });
         this._handleEvents();
+        console.log(this);                      // здесь есть объект в свойстве, но дальше доступа к нему нет
+        console.log(this.basket);               // здесь уже пустой объект
     }
 
     _getBasket() {
@@ -100,7 +104,6 @@ class BasketList {
             .catch(error => {
                 console.log(error);
             });
-
     }
     // calcSum() {
     //     return this.allProducts.reduce((accum, item) => accum += item.price, 0);
