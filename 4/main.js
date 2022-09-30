@@ -12,7 +12,7 @@ function handleEvents() {
         let str3 = str2.replace(/(\w\"\w)/g, replacer);
         document.querySelector('p').innerHTML = str3;
     })
-    document.querySelector('#task-3').addEventListener('click', event => {
+    document.querySelector('form').addEventListener('submit', event => {
         event.preventDefault();
         let name = document.querySelector('#name');
         let phone = document.querySelector('#phone');
