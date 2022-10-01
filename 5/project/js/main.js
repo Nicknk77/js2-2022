@@ -8,7 +8,9 @@ const app = new Vue({
         filtered: [],
         imgCatalog: 'https://via.placeholder.com/200x150',
         userSearch: '',
-        show: false
+        show: false,
+        cart: [],
+        totalCart: 0
     },
     methods: {
         filter() {
@@ -23,7 +25,33 @@ const app = new Vue({
                 })
         },
         addProduct(product) {
-            console.log(product.id_product);
+            if (this.cart.find(item => item.id_product === product.id_product)) {
+                product.qty++;
+            }
+            else {
+                product.qty = 1;
+                this.cart.push(product);
+            };
+            this.getTotal();
+        },
+        getTotal() {
+            this.totalCart = 0;
+            this.cart.forEach(el => {
+                this.totalCart += el.qty * el.price;
+            });
+        },
+        delItem(product) {
+            if (product.qty > 1) {
+                product.qty--;
+            }
+            else {
+                this.cart.splice(this.cart.findIndex(item => item.id_product ===
+                    product.id_product), 1);
+            }
+            this.getTotal();
+        },
+        showCart() {
+            this.show = !this.show;
         }
     },
     mounted() {

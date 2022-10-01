@@ -19,8 +19,19 @@
                         <i class="fas fa-search"></i>
                     </button>
                 </form>
-                <button class="btn-cart" type="button">Корзина</button>
-                <div class="cart-block invisible"></div>
+                <button class="btn-cart" type="button" @click="showCart()">Корзина</button>
+                <div class="cart-block" v-show="show">
+                    <div class="product-item" v-for="product of cart" :key="product.id_product">
+                        <img :src="imgCatalog" alt="Some img">
+                        <div class="desc">
+                            <h3>{{product.product_name}}</h3>
+                            <p>{{product.price}} $</p>
+                            <p>{{product.qty}} pcs</p>
+                            <button class="buy-btn" @click="delItem(product)">Удалить</button>
+                        </div>
+                    </div>
+                    <div>Total amount: {{totalCart}}$</div>
+                </div>
             </div>
         </header>
         <main>
