@@ -1,0 +1,50 @@
+[
+  {
+    "id_product": 0,
+    "product_name": "MANGO PEOPLE T-SHIRT",
+    "price": 52,
+    "img": "https://raw.githubusercontent.com/Nicknk77/img/master/GB_img/infeature1.jpg"
+  },
+  {
+    "id_product": 1,
+    "product_name": "BANANA PEOPLE T-SHIRT",
+    "price": 50,
+    "img": "https://raw.githubusercontent.com/Nicknk77/img/master/GB_img/infeature2.jpg"
+  },
+  {
+    "id_product": 2,
+    "product_name": "STRAWBERRY PEOPLE T-SHIRT",
+    "price": 85,
+    "img": "https://raw.githubusercontent.com/Nicknk77/img/master/GB_img/infeature3.jpg"
+  },
+  {
+    "id_product": 3,
+    "product_name": "ORANGE PEOPLE T-SHIRT",
+    "price": 70,
+    "img": "https://raw.githubusercontent.com/Nicknk77/img/master/GB_img/infeature4.jpg"
+  },
+  {
+    "id_product": 4,
+    "product_name": "PUMKIN PEOPLE T-SHIRT",
+    "price": 30,
+    "img": "https://raw.githubusercontent.com/Nicknk77/img/master/GB_img/infeature5.jpg"
+  },
+  {
+    "id_product": 5,
+    "product_name": "PINEAPPLE PEOPLE T-SHIRT",
+    "price": 60,
+    "img": "https://raw.githubusercontent.com/Nicknk77/img/master/GB_img/infeature6.jpg"
+  },
+  {
+    "id_product": 6,
+    "product_name": "CUCUMBER PEOPLE T-SHIRT",
+    "price": 23,
+    "img": "https://raw.githubusercontent.com/Nicknk77/img/master/GB_img/infeature7.jpg"
+  },
+  {
+    "id_product": 7,
+    "product_name": "TOMATO PEOPLE T-SHIRT",
+    "price": 45,
+    "img": "https://raw.githubusercontent.com/Nicknk77/img/master/GB_img/infeature8.jpg"
+  }
+]
