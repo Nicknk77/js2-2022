@@ -3,7 +3,7 @@
 Vue.component('cart', {
     data() {
         return {
-            // cartUrl: '/getBasket.json',
+            cartUrl: '/userCart.json',
             cartItems: [],
             imgCart: 'https://placehold.it/50x100',
             showCart: false,
@@ -11,18 +11,18 @@ Vue.component('cart', {
             totalQty: 0
         }
     },
-    // mounted() {
-    //     this.$parent.getJson(`/api/cart`)
-    //         .then(data => {
-    //             for (let item of data.contents) {
-    //                 this.$data.cartItems.push(item);
-    //             }
-    //         });
-    // },
+    mounted() {
+        this.$parent.getJson(`/api/cart`)
+            .then(data => {
+                this.$data.totalQty = data.totalQty;
+                this.$data.totalSum = data.totalSum;
+                for (let item of data.contents) {
+                    this.$data.cartItems.push(item);
+                }
+            });
+    },
     methods: {
         addProduct(item) {
-            this.totalSum = 0;
-            this.totalQty = 0;
             let find = this.cartItems.find(el => el.id_product === item.id_product);
             if (find) {
                 this.$parent.putJson(`/api/cart/${find.id_product}`, { quantity: 1 })
@@ -45,18 +45,6 @@ Vue.component('cart', {
                     })
             }
             this.getTotalSum();
-            // this.$parent.getJson(`${API}/addToBasket.json`)
-            //     .then(data => {
-            //         if(data.result === 1){
-            //             let find = this.cartItems.find(el => el.id_product === item.id_product);
-            //             if(find){
-            //                 find.quantity++;
-            //             } else {
-            //                 const prod = Object.assign({quantity: 1}, item);
-            //                 this.cartItems.push(prod)
-            //             }
-            //         }
-            //     })
         },
         getTotalSum() {
             this.totalQty = 0;
@@ -67,7 +55,7 @@ Vue.component('cart', {
             });
         },
         remove(item) {
-            this.$parent.getJson(`${API}/addToBasket.json`)
+            this.$parent.getJson(`${API}/deleteFromBasket.json`)
                 .then(data => {
                     if (data.result === 1) {
                         if (item.quantity > 1) {
@@ -77,6 +65,7 @@ Vue.component('cart', {
                         }
                         this.getTotalSum();
                     }
+                    this.$parent.putJson(`server/db/${this.cartUrl}`, item);
                 })
         },
     },
