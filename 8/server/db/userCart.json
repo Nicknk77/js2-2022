@@ -1,0 +1,13 @@
+{
+    "totalSum": 0,
+    "totalQty": 0,
+    "contents": [
+        {
+            "quantity": 1,
+            "id_product": 3,
+            "product_name": "ORANGE PEOPLE T-SHIRT",
+            "price": 70,
+            "img": "https://raw.githubusercontent.com/Nicknk77/img/master/GB_img/infeature4.jpg"
+        }
+    ]
+}

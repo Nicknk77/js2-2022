@@ -1,0 +1,20 @@
+{
+    "totalSum": 0,
+    "totalQty": 0,
+    "contents": [
+        {
+            "quantity": 3,
+            "id_product": 0,
+            "product_name": "MANGO PEOPLE T-SHIRT",
+            "price": 52,
+            "img": "https://raw.githubusercontent.com/Nicknk77/img/master/GB_img/infeature1.jpg"
+        },
+        {
+            "quantity": 1,
+            "id_product": 1,
+            "product_name": "BANANA PEOPLE T-SHIRT",
+            "price": 50,
+            "img": "https://raw.githubusercontent.com/Nicknk77/img/master/GB_img/infeature2.jpg"
+        }
+    ]
+}
