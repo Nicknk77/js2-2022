@@ -4,7 +4,7 @@ Vue.component('products', {
             catalogUrl: '/products.json',
             filtered: [],
             products: [],
-            imgProduct: 'https://placehold.it/200x150'
+            imgProduct: 'https://placehold.it/200x150',
         }
     },
     mounted() {

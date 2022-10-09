@@ -12,11 +12,10 @@ Vue.component('cart', {
     mounted() {
         this.$parent.getJson(`/api/cart`)
             .then(data => {
-                this.$data.totalQty = data.totalQty;
-                this.$data.totalSum = data.totalSum;
                 for (let item of data.contents) {
                     this.$data.cartItems.push(item);
                 }
+                this.getTotalSum();
             });
     },
     methods: {
@@ -57,8 +56,11 @@ Vue.component('cart', {
                 .then(data => {
                     if (data.result === 1) {
                         if (item.quantity > 1) {
+                            console.log(`/api/cart/${item.id_product}`);
+                            this.$parent.putJson(`/api/cart/${item.id_product}`, { quantity: -1 });
                             item.quantity--;
                         } else {
+                            this.$parent.delJson(`/api/cart/${item.id_product}/${item.product_name}`, item);
                             this.cartItems.splice(this.cartItems.indexOf(item), 1);
                         }
                         this.getTotalSum();
